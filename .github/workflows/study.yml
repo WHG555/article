@@ -74,6 +74,7 @@ jobs:
           git init 
           git remote add origin git@github.com:WHG555/whg555.github.io.git
           git remote set-url origin https://$TOKEN_ARTICLE@github.com/WHG555/whg555.github.io.git
+          git config --global init.defaultBranch master
           git add . --all
           git commit -m "github action publish"
           git push origin master -f
