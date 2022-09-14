@@ -72,7 +72,7 @@ jobs:
           ssh-keyscan -t rsa gitee.com >> ~/.ssh/known_hosts
           git config --global user.name $GIT_USER
           git config --global user.email $GIT_EMAIL
-
+    
       - name: Install dependencies
         run: |
           npm install hexo-cli -g
