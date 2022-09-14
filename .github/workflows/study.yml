@@ -75,3 +75,15 @@ jobs:
           pwd
           ls -alh
           ls -alh .deploy_git
+          
+      - name: Install dependencies
+        run: |
+          npm install -g hexo
+          npm install
+          # 根据你安装的组件进行安装
+          
+          hexo g
+      
+      
+
+
