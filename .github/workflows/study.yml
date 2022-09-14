@@ -81,3 +81,18 @@ jobs:
           npm install
           # 根据你安装的组件进行安装
           
+      - name: Deploy hexo
+        run: |
+          hexo g
+  
+      # 以下为发布到gitee
+      - name: Sync to Gitee
+        uses: wearerequired/git-mirror-action@master
+        env:
+          # 直接使用了 HEXO_DEPLOY_PRI
+          SSH_PRIVATE_KEY: ${{ secrets.HEXO_DEPLOY_PRI }}
+        with:
+          # GitHub 源仓库地址
+          source-repo: ${{ env.GIT_SOURCE_REPO }}
+          # Gitee 目标仓库地址
+          destination-repo: ${{ env.GITEE_DESTINATION_REPO }}
