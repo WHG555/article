@@ -70,8 +70,8 @@ jobs:
           # coding 已取消同步
           ssh-keyscan -t rsa e.coding.net >> ~/.ssh/known_hosts
           ssh-keyscan -t rsa gitee.com >> ~/.ssh/known_hosts
-          git config --global user.name $GIT_USER
-          git config --global user.email $GIT_EMAIL
+          git config --global user.name WHG555
+          git config --global user.email whghcyx@outlook.com
       - name: Install dependencies
         run: |
           npm install hexo-cli -g
