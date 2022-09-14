@@ -61,7 +61,7 @@ jobs:
       - name: Configuration environment
         env:
           HEXO_DEPLOY_PRI: ${{secrets.HEXO_DEPLOY_PRI}}
-          TOKEN_SHOW: ${{ secrets.TOKEN_HEXO }}
+          TOKEN_SHOW: ${{ secrets.TOKEN_ARTICLE }}
         run: |
           echo $TOKEN_SHOW
           echo $TOKEN_HEXO
