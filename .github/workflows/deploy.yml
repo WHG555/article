@@ -72,6 +72,7 @@ jobs:
           ssh-keyscan -t rsa gitee.com >> ~/.ssh/known_hosts
           git config --global user.name WHG555
           git config --global user.email whghcyx@outlook.com
+   
       - name: Install dependencies
         run: |
           npm install hexo-cli -g
@@ -109,3 +110,8 @@ jobs:
           gitee-repo: ${{ env.GITEE_DEPLOY_REPO }}
           # 要部署的分支，默认是 master，若是其他分支，则需要指定（指定的分支必须存在）
           branch: ${{ env.GITEE_DEPLOY_BRANCH }}
+      - name: step out
+        if: ${{ failure() }}
+        run: |
+          author=$(git show -s --format=%an)
+          curl --location --request POST xxxx
