@@ -71,13 +71,17 @@ jobs:
       - name: update code
         env:
           HEXO_DEPLOY_PRI: ${{secrets.HEXO_DEPLOY_PRI}}
-          TOKEN_ARTICLE: ${{secrets.HEXO_ARTICLE}}
+          TOKEN_SHOW: ${{ secrets.TOKEN_ARTICLE }}
         run: |
+          echo $TOKEN_SHOW
           cd public
           git init 
-          git remote add origin git@github.com:WHG555/whg555.github.io.git
-          git remote set-url origin https://$TOKEN_ARTICLE@github.com/WHG555/whg555.github.io.git
           git config --global init.defaultBranch master
+          git remote add origin git@github.com:WHG555/whg555.github.io.git
+          git remote set-url origin https://$TOKEN_SHOW@github.com/WHG555/whg555.github.io.git
+          
+          
+          cat .git/config
           git add . --all
           git commit -m "github action publish"
           git push origin master -f
