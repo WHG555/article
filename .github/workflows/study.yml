@@ -73,8 +73,6 @@ jobs:
           git config --global user.name WHG555
           git config --global user.email whghcyx@outlook.com
           
-          ssh -T git@github.com
-          
       - name: Install dependencies
         run: |
           npm install -g hexo
