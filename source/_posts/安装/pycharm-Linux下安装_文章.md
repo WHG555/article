@@ -12,7 +12,7 @@ categories:
 
 
 # 步骤
-## 1、拷贝安装包到Linux下
+## 1、拷贝安装包到Linux下面
 ## 2、 解压安装包
 ```
 sudo mkdir /opt/pycharm
