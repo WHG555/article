@@ -19,4 +19,4 @@ hexo s
 ```
 hexo g -d
 ```
-yy
+yy55
